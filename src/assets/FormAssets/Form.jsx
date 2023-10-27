@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Name } from "./Name";
 import { Age } from "./Age";
 import { Band } from "./Band";
-import { ConfirmationPage } from "./ConfirmationPage";
+import { ConfirmationPage } from "../ConfirmationPage";
+import { Header } from "./FormHeader";
+
 
 export const Form = () => {
     const [formData, setFormData] = useState({
@@ -21,6 +23,7 @@ export const Form = () => {
 
 
 
+    // Steps for next/prev buttons
     const nextStep = () => {
         if (currentStep < 3) setCurrentStep(currentStep + 1);
       };
@@ -29,14 +32,20 @@ export const Form = () => {
       };
 
 
+      
+      // Updating form submission status from initial false to true when button is clicked
       const [formSubmitted, setFormSubmitted] = useState(false);
       const submitForm = () => {
         setFormSubmitted(true);
+
+        
       };
       
+     
 
     return (
         <div className="formWrapper">
+            <Header formSubmitted={formSubmitted} />
             {formSubmitted ? (
                 <ConfirmationPage formData={formData}/>
             ) : (
@@ -69,3 +78,4 @@ export const Form = () => {
         </div>
     );
 };
+

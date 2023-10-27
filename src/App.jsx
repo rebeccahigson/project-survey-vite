@@ -1,11 +1,11 @@
-import { Header } from "./assets/Header"
-import { Form } from "./assets/Form"
+import { Header } from "./assets/FormAssets/FormHeader"
+import { Form } from "./assets/FormAssets/Form"
 
 export const App = () => {
   return (
     <div className="mainWrapper">
       <div className="container">
-        <Header />
+      
         <Form />
       </div>
     </div>

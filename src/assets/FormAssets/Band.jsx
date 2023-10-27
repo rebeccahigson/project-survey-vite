@@ -4,12 +4,12 @@ export const Band = ({value, updateFormData}) => {
 
   return (
     <div>
-        <label>Band:</label>
+        <label>What is your favorite band?</label>
         <select 
         value={value} 
         onChange={favBand}>
           
-          <option disabled selected value="">- Please select a band -</option>
+          <option className="placeholder" disabled selected value="">- Please select a band -</option>
           <option value="Coldplay">Coldplay</option>
           <option value="Muse">Muse</option>
           <option value="Oasis">Oasis</option>
