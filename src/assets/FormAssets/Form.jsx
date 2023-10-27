@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Name } from "./Name";
 import { Age } from "./Age";
 import { Band } from "./Band";
+import { Email } from "./Email";
 import { ConfirmationPage } from "../ConfirmationPage";
 import { Header } from "./FormHeader";
 
@@ -9,6 +10,7 @@ import { Header } from "./FormHeader";
 export const Form = () => {
     const [formData, setFormData] = useState({
         name: "",
+        email: "",
         age: "",
         favBand: "",
     });
@@ -25,7 +27,7 @@ export const Form = () => {
 
     // Steps for next/prev buttons
     const nextStep = () => {
-        if (currentStep < 3) setCurrentStep(currentStep + 1);
+        if (currentStep < 4) setCurrentStep(currentStep + 1);
       };
       const prevStep = () => {
         if (currentStep > 1) setCurrentStep(currentStep - 1);
@@ -37,8 +39,6 @@ export const Form = () => {
       const [formSubmitted, setFormSubmitted] = useState(false);
       const submitForm = () => {
         setFormSubmitted(true);
-
-        
       };
       
      
@@ -57,17 +57,22 @@ export const Form = () => {
 
             {/*-- STEP 2 ------*/}
             {currentStep === 2 && (
-                <Age value={formData.age} updateFormData={updateFormData} />
+                <Email value={formData.email} updateFormData={updateFormData}/>
             )}
 
             {/*-- STEP 3 ------*/}
             {currentStep === 3 && (
+                <Age value={formData.age} updateFormData={updateFormData} />
+            )}
+
+            {/*-- STEP 4 ------*/}
+            {currentStep === 4 && (
                 <Band value={formData.band} updateFormData={updateFormData} />
             )}
 
             <div className="multi-step-form">
                 {currentStep > 1 && <button onClick={prevStep}> « Back</button>}
-                {currentStep < 3 ? (
+                {currentStep < 4 ? (
                 <button onClick={nextStep}>Next »</button>
                 ) : (
                 <button className="submitButton" onClick={submitForm}>Submit</button>
