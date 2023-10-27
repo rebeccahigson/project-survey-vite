@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Name } from "./Name";
 import { Age } from "./Age";
 import { Band } from "./Band";
+import { ConfirmationPage } from "./ConfirmationPage";
 
 export const Form = () => {
     const [formData, setFormData] = useState({
@@ -23,26 +24,23 @@ export const Form = () => {
     const nextStep = () => {
         if (currentStep < 3) setCurrentStep(currentStep + 1);
       };
-    
       const prevStep = () => {
         if (currentStep > 1) setCurrentStep(currentStep - 1);
       };
 
 
+      const [formSubmitted, setFormSubmitted] = useState(false);
       const submitForm = () => {
-        console.log(formData);
-        const formattedData = `
-        Name: ${formData.name}
-        Age: ${formData.age}
-        Favorite Band: ${formData.favBand}
-      `;
-    
-        alert(formattedData);
+        setFormSubmitted(true);
       };
-
+      
 
     return (
         <div className="formWrapper">
+            {formSubmitted ? (
+                <ConfirmationPage formData={formData}/>
+            ) : (
+            <>
             {/*--- STEP 1 ------*/}
             {currentStep === 1 && (
                 <Name value={formData.name} updateFormData={updateFormData} />
@@ -63,9 +61,11 @@ export const Form = () => {
                 {currentStep < 3 ? (
                 <button onClick={nextStep}>Next »</button>
                 ) : (
-                <button class="submitButton" onClick={submitForm}>Submit</button>
+                <button className="submitButton" onClick={submitForm}>Submit</button>
                 )}
             </div>
+            </>
+            )}
         </div>
     );
 };

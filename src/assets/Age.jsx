@@ -1,4 +1,37 @@
 export const Age = ({value, updateFormData}) => {
+const ageGroups = [
+  "16-19",
+  "20-39",
+  "40-59",
+  "60 +"
+]
+
+  const ageInput = (e) => updateFormData("age", e.target.value);
+  
+    return (
+      <div>
+        <label>Age:</label>
+
+      {ageGroups.map((group) => (
+        <label key={group}>
+          {group}
+          <input 
+            type="radio"
+            value={group}
+            onChange={(e) => updateFormData("age", e.target.value)}
+            checked={value === group}
+          />
+
+        </label>
+      ))}
+      </div>
+    )
+  }
+
+
+
+
+/*export const Age = ({value, updateFormData}) => {
 const ageInput = (e) => updateFormData("age", e.target.value);
 
   return (
@@ -56,36 +89,12 @@ const ageInput = (e) => updateFormData("age", e.target.value);
       </span>
     </div>
   )
-}
+}*/
 
 
 
 
 
-/*<div>
-        <label>Age:</label>
-        <input type="number" value={value} onChange={ageInput} placeholder="Please enter your age" />
-    </div>*/
 
-    /*<div>
-      <label>Age:</label>
-        <label class="radio-container">16-19
-            <input type="radio" checked="checked" name="radio" />
-            <span class="checkmark"></span>
-        </label>
 
-        <label class="radio-container">20-39
-          <input type="radio" name="radio" />
-          <span class="checkmark"></span>
-        </label>
 
-        <label class="radio-container">40-59
-          <input type="radio" name="radio" />
-          <span class="checkmark"></span>
-        </label>
-
-        <label class="radio-container">60+
-          <input type="radio" name="radio" />
-          <span class="checkmark"></span>
-        </label>
-    </div>*/

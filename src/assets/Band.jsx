@@ -10,9 +10,9 @@ export const Band = ({value, updateFormData}) => {
         onChange={favBand}>
           
           <option disabled selected value="">- Please select a band -</option>
-          <option value="coldplay">Coldplay</option>
-          <option value="muse">Muse</option>
-          <option value="oasis">Oasis</option>
+          <option value="Coldplay">Coldplay</option>
+          <option value="Muse">Muse</option>
+          <option value="Oasis">Oasis</option>
 
         </select>
     </div>
