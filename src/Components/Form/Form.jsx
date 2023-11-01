@@ -49,7 +49,7 @@ export const Form = () => {
             {formSubmitted ? (
                 <ConfirmationPage formData={formData}/>
             ) : (
-            <>
+            <form>
             {/*--- STEP 1 ------*/}
             {currentStep === 1 && (
                 <Name value={formData.name} updateFormData={updateFormData} />
@@ -78,9 +78,8 @@ export const Form = () => {
                 <button className="submitButton" onClick={submitForm}>Submit</button>
                 )}
             </div>
-            </>
+            </form>
             )}
         </div>
     );
 };
-
