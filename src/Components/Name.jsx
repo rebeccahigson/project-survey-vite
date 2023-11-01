@@ -4,7 +4,7 @@ export const Name = ({value, updateFormData}) => {
 
     return (
         <div>
-            <label>Please enter your name:</label>
+            <label>Name:</label>
             <input 
             type="text" 
             placeholder="Please enter your name" 

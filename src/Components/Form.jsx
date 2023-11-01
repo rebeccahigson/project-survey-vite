@@ -3,7 +3,7 @@ import { Name } from "./Name";
 import { Age } from "./Age";
 import { Band } from "./Band";
 import { Email } from "./Email";
-import { ConfirmationPage } from "../ConfirmationPage";
+import { ConfirmationPage } from "./ConfirmationPage";
 import { Header } from "./FormHeader";
 
 

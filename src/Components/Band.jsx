@@ -16,5 +16,5 @@ export const Band = ({value, updateFormData}) => {
 
         </select>
     </div>
-  )
-}
+  );
+};

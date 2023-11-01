@@ -23,10 +23,10 @@ const ageGroups = [
           />
 
         </label>
-      ))}
+      ))};
       </div>
-    )
-  }
+    );
+  };
 
 
 

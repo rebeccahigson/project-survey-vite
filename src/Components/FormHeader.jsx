@@ -11,7 +11,7 @@ export const Header = ({formSubmitted}) => {
         )}
         {formSubmitted === false && (
             <>
-                <h1>Survey</h1>
+                <h1>Welcome to my survey!</h1>
                 <p>Please answer a few questions about yourself.</p>
             </>
         )}

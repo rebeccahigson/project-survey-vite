@@ -4,7 +4,7 @@ export const Email = ({value, updateFormData}) => {
 
     return (
         <div>
-            <label>Please enter your email address:</label>
+            <label>Email address:</label>
             <input 
             type="text" 
             placeholder="Please enter your email address" 

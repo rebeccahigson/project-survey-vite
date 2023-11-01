@@ -1,5 +1,5 @@
-import { Header } from "./assets/FormAssets/FormHeader"
-import { Form } from "./assets/FormAssets/Form"
+import { Header } from "./Components/FormHeader"
+import { Form } from "./Components/Form"
 
 export const App = () => {
   return (
