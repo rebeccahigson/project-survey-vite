@@ -1,4 +1,4 @@
-import { Form } from "./Components/Form/Form"
+import { Form } from "./assets/Components/Form/Form"
 
 export const App = () => {
   return (
